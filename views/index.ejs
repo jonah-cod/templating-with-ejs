@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <Link rel="stylesheet" href="css/styles.css">
+      <title>Document</title>
+</head>
+
+<body>
+      <h1>Welcome home, <%= user.name.split(" ")[0] %> </h1>
+      <h4>Email: <%= user.email %> </h4>
+      <p>Hello here's what we know about you.</p>
+      <h4>Hobbies</h4>
+      <ul>
+            <%user.hobbies.forEach(hobby=>{%>
+                  <li> <%= hobby %>  </li>
+            <%})%>
+      </ul>
+
+      <h4>Friends</h4>
+      <%- include("friends", {users}) %> 
+</body>
+
+</html>
